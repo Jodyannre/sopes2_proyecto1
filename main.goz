@@ -1,0 +1,18 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"log"
+	operation "sopes2_p1/functions"
+)
+
+func main() {
+	fmt.Println("Hola mundo")
+	result := operation.GetDisk()
+	jsonData, err := json.Marshal(result)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Print(string(jsonData))
+}
